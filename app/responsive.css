@@ -1,0 +1,22 @@
+@media only screen and (max-width: 786px) {
+  .hero__wrap {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  #home > div > div:last-child,
+  #home > div > div:first-child {
+    grid-column: 1 / -1;
+  }
+  #home > div {
+    grid-template-columns: 1fr !important;
+  }
+  #home h1 {
+    font-size: 34px !important;
+  }
+
+  .gridTemplateColumns {
+    grid-template-columns: 1fr;
+  }
+}
