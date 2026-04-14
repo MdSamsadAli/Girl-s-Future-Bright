@@ -5,12 +5,13 @@ import image1 from "../../public/images/face-1.jpeg";
 import image2 from "../../public/images/face-2.jpeg";
 import image3 from "../../public/images/face-3.jpeg";
 import image4 from "../../public/images/face-4.jpeg";
+import image5 from "../../public/images/face-5.jpeg";
 
 const SLIDES = [
   {
     name: "Sabila Khatun",
     course: "B.Ed Student · Tribhuvan University",
-    age: "Age 21 · Kathmandu",
+    // age: "Age 21 · Kathmandu",
     image: image1,
     text1:
       "My name is Sabila Khatun. I am 21 years old and currently pursuing a Bachelor of Education (B.Ed) degree from Tribhuvan University. I am a student and have started my journey with an online business opportunity, where I am growing step by step. My goal is to become self-independent, improve my life, and support others in improving theirs.",
@@ -26,7 +27,7 @@ const SLIDES = [
   {
     name: "Ritu Maharjan",
     course: "+2 Science · Ratna Rajya Campus",
-    age: "Age 19 · Lalitpur",
+    // age: "Age 19 · Lalitpur",
     image: image2,
     text1:
       "My name is Ritu Maharjan. I am 19 years old and currently studying +2 Science at Ratna Rajya Campus. I am a student and have started my journey with an online business opportunity, where I am growing step by step. My goal is to become self-independent, improve my life, and support others in improving theirs.",
@@ -42,7 +43,7 @@ const SLIDES = [
   {
     name: "Kavita Thapa",
     course: "Loksewa Prep · Shankar Dev Campus",
-    age: "Age 24 · Bhaktapur",
+    // age: "Age 24 · Bhaktapur",
     image: image3,
     text1:
       "My name is Kavita Thapa. I am 24 years old and currently preparing for Loksewa at Shankar Dev Campus. I am a student and have started my journey with an online business opportunity, where I am growing step by step. My goal is to become self-independent, improve my life, and support others in improving theirs.",
@@ -56,14 +57,35 @@ const SLIDES = [
     ],
   },
   {
-    name: "Sunita Poudel",
+    name: "Kaniza Fatima",
     course: "IELTS Preparation · British Council",
-    age: "Age 22 · Pokhara",
+    // age: "Age 22 · Pokhara",
     image: image4,
+    text1: `
+    I am Kaniza Fatima, 19 years old.
+Before joining “Girls Future Bright,” there was confusion about direction, self-doubt, and challenges in relationships. There was no clear understanding of purpose or true identity.
+After joining “Girls Future Bright,” the personality type  Helper  was discovered, which brought a new level of self-understanding. With step-by-step guidance, mindset improved, confidence grew, and relationships became better.
+    `,
+    text2: `
+    Today, there is more clarity, confidence, and happiness. Truly thankful to “Girls Future Bright” for the guidance and for helping in becoming a better version.
+    `,
+    tags: [
+      "Personal Growth",
+      "Online Business",
+      "Self-Independent",
+      "Personality Test",
+    ],
+  },
+
+  {
+    name: "Sangita Kumari Ram",
+    course: "IELTS Preparation · British Council",
+    // age: "Age 22 · Pokhara",
+    image: image5,
     text1:
-      "My name is Sunita Poudel. I am 22 years old and currently preparing for IELTS at the British Council. I am a student and have started my journey with an online business opportunity, where I am growing step by step. My goal is to become self-independent, improve my life, and support others in improving theirs.",
-    text2:
-      "I am working on my personal growth and business at the same time. The personality test helped me understand my strengths, weaknesses, and mindset, which is helping me improve my life and business.",
+      "My name is Sangita Kumari Ram. There was a time when I struggled with a lack of confidence, unhealthy relationships, and a constant feeling of emptiness inside. I felt stuck, and opportunities in my life had almost stopped. Deep down, I knew I was missing something, but I didn’t know how to fix it.",
+    text2: `Then I joined “Girls Future Bright” under the guidance of Farida Shah, and my journey completely changed. I worked on my mindset, rebuilt my confidence, improved my relationships, and started understanding myself on a deeper level. I also began receiving new opportunities that helped me grow.
+Today, I feel more confident, clear, and positive about my future. I am truly grateful to Farida Shah for her guidance and support in helping me become a better version of myself.`,
     tags: [
       "Personal Growth",
       "Online Business",
@@ -119,13 +141,13 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
               style={{
                 fontSize: 14,
                 color: "#7c3aed",
-                opacity: 0.65,
+                // opacity: 0.65,
                 marginTop: 4,
               }}
             >
               {slide.course}
             </div>
-            <div
+            {/* <div
               style={{
                 fontSize: 14,
                 color: "#be185d",
@@ -134,7 +156,7 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
               }}
             >
               {slide.age}
-            </div>
+            </div> */}
           </div>
 
           <div style={{ color: "#ec4899", fontSize: 18, letterSpacing: 3 }}>
@@ -220,7 +242,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="bg-white">
       <div className="section-inner">
         <div
           className="anim-fade-up"
