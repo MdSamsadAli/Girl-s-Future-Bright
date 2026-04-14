@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: Number(process.env.SMTP_PORT),
+  secure: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+});
 
 export async function POST(req: NextRequest) {
   const { name, email, phone, message } = await req.json();
@@ -12,9 +20,9 @@ export async function POST(req: NextRequest) {
 
   try {
     // ── Email to ADMIN ──
-    await resend.emails.send({
-      from: "Girl's Future Bright <onboarding@resend.dev>",
-      to: process.env.ADMIN_EMAIL!,
+    await transporter.sendMail({
+      from: `"Girl's Future Bright" <${process.env.SMTP_USER}>`,
+      to: process.env.ADMIN_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:24px;border:1px solid #e9d5ff;border-radius:12px;">
@@ -30,8 +38,8 @@ export async function POST(req: NextRequest) {
     });
 
     // ── Confirmation email to USER ──
-    await resend.emails.send({
-      from: "Girl's Future Bright <onboarding@resend.dev>",
+    await transporter.sendMail({
+      from: `"Girl's Future Bright" <${process.env.SMTP_USER}>`,
       to: email,
       subject: "We received your message — Girl's Future Bright",
       html: `
@@ -51,7 +59,7 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("Mail error:", err);
     return NextResponse.json(
-      { error: "Failed to send email something went wrng" },
+      { error: "Failed to send email" },
       { status: 500 },
     );
   }
