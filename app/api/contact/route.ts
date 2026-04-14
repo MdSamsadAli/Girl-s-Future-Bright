@@ -48,12 +48,11 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true });
-
   } catch (err) {
     console.error("Mail error:", err);
     return NextResponse.json(
-      { error: "Failed to send email" },
-      { status: 500 }
+      { error: "Failed to send email something went wrng" },
+      { status: 500 },
     );
   }
 }
