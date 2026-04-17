@@ -1,20 +1,20 @@
 "use client";
 import { useState } from "react";
 
-const quotes = [
-  {
-    text: "Education is the most powerful weapon you can use to change the world.",
-    author: "Nelson Mandela",
-  },
-  {
-    text: "A girl with a book in her hand can change the destiny of a nation.",
-    author: "Girls' Future Bright Academy",
-  },
-  {
-    text: "When girls are educated, entire communities thrive.",
-    author: "Global Education Report",
-  },
-];
+// const quotes = [
+//   {
+//     text: "Education is the most powerful weapon you can use to change the world.",
+//     author: "Nelson Mandela",
+//   },
+//   {
+//     text: "A girl with a book in her hand can change the destiny of a nation.",
+//     author: "Girls' Future Bright Academy",
+//   },
+//   {
+//     text: "When girls are educated, entire communities thrive.",
+//     author: "Global Education Report",
+//   },
+// ];
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -27,7 +27,7 @@ export default function Contact() {
     "idle",
   );
 
-  const [activeQuote, setActiveQuote] = useState(0);
+  // const [activeQuote, setActiveQuote] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
