@@ -1,8 +1,9 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import Link from "next/link";
-
 const LINKS = ["Home", "About", "Courses", "Gallery", "Contact"];
+
+import logo from "../../public/images/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -45,18 +46,10 @@ export default function Navbar() {
           justifyContent: "space-between",
         }}
       >
-        <a
-          href="#home"
-          style={{
-            fontFamily: "var(--font-playfair)",
-            fontSize: 20,
-            fontWeight: 800,
-            color: "#4c1d95",
-            textDecoration: "none",
-            letterSpacing: -0.5,
-          }}
-        >
-          <span className="grad-text">She</span>Rise Academy
+        <a href="#home">
+          <div className="logo">
+            <Image src={logo} alt="logo" />
+          </div>
         </a>
 
         {/* Desktop links */}

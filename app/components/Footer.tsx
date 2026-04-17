@@ -1,30 +1,27 @@
 "use client";
-import {
-  FaFacebookF,
-  FaYoutube,
-  FaInstagram,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
+import logo from "../../public/images/logo.png";
+import Image from "next/image";
 
 const SOCIALS = [
   {
     icon: <FaFacebookF size={14} />,
-    href: "https://www.facebook.com/atmossofttech",
+    href: "https://www.facebook.com/share/1BJ4b9ExAH/",
     color: "#1877f2",
   },
   {
-    icon: <FaYoutube size={14} />,
-    href: "https://www.youtube.com/@shamskhus5063",
+    icon: <FaTiktok size={14} />,
+    href: "https://www.tiktok.com/@faridashahi1?_r=1&_t=ZS-95TPbmPq49Z ",
     color: "#ff0000",
   },
   {
     icon: <FaInstagram size={14} />,
-    href: "https://www.instagram.com/atmossofttech/",
+    href: "https://www.instagram.com/shahfarida11?igsh=MmpheDFhMjlxbGFp",
     color: "#e1306c",
   },
   {
     icon: <FaWhatsapp size={14} />,
-    href: "https://wa.me/9813381892",
+    href: "https://wa.me/918792725732",
     color: "#25d366",
   },
 ];
@@ -43,26 +40,8 @@ export default function Footer() {
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div className="grid lg:grid-cols-3 gap-8 mt-7">
           <div>
-            <div
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontSize: 20,
-                fontWeight: 800,
-                color: "#4c1d95",
-                marginBottom: 10,
-              }}
-            >
-              <span
-                style={{
-                  background: "linear-gradient(135deg,#ec4899,#a855f7)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                She
-              </span>
-              Rise Academy
+            <div className="logo">
+              <Image src={logo} alt="logo" />
             </div>
             <p
               style={{

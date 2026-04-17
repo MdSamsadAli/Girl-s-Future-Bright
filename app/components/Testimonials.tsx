@@ -180,6 +180,7 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
           </div>
 
           <p
+            className="line-clamp-3"
             style={{
               fontSize: 15,
               color: "#4c1d95",
@@ -193,6 +194,7 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
           </p>
 
           <p
+            className="line-clamp-2"
             style={{
               fontSize: 15,
               color: "#4c1d95",
